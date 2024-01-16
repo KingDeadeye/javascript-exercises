@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+        <label for="item">Enter a new item:</label>
+        <input type="text" name="item" id="item">
+        <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        // const ab = document.querySelector('ul');
+        // const bc = document.querySelector('input');
+        // const ca = document.querySelector('button');
+
+        // // Move the function expression declaration above
+        // let pika = function clicky(ar) {
+        //     let p = ar; // Fix: Use the correct variable here
+        //     bc.value = ''; // Fix: Use value property to clear input
+        //     const lii = document.createElement('li');
+        //     const spann = document.createElement('span');
+        //     const bt = document.createElement('button');
+        //     lii.append(spann);
+        //     lii.append(bt);
+        //     spann.textContent = p;
+        //     bt.textContent = 'Delete';
+        //     ab.appendChild(lii);
+        //     bt.addEventListener('click', () => {
+        //         lii.remove();
+        //     });
+        //     bc.focus();
+        // }
+
+        // ca.addEventListener('click', () => pika(bc.value));
+       
+        const ab = document.querySelector('ul');
+        const bc = document.querySelector('input');
+        const ca = document.querySelector('button');
+        let ar=bc.value;
+        
+        function clicky (value){
+            let p=value;
+            bc.value='';
+            const lii = document.createElement('li');
+            const spann = document.createElement('span');
+            const bt = document.createElement('button');
+            lii.append(spann);
+            lii.append(bt);
+            spann.textContent=p;
+            bt.textContent='Delete';
+            ab.appendChild(lii);
+            ca.addEventListener('click',()=>{
+                lii.remove();
+            });
+            bc.focus();
+
+
+        }
+        ca.addEventListener('click',()=>clicky(ar));
+    </script>
+</body>
+
+</html>
