@@ -33,55 +33,50 @@
     </ul>
 
     <script>
-        // const ab = document.querySelector('ul');
-        // const bc = document.querySelector('input');
-        // const ca = document.querySelector('button');
-
-        // // Move the function expression declaration above
-        // let pika = function clicky(ar) {
-        //     let p = ar; // Fix: Use the correct variable here
-        //     bc.value = ''; // Fix: Use value property to clear input
-        //     const lii = document.createElement('li');
-        //     const spann = document.createElement('span');
-        //     const bt = document.createElement('button');
-        //     lii.append(spann);
-        //     lii.append(bt);
-        //     spann.textContent = p;
-        //     bt.textContent = 'Delete';
-        //     ab.appendChild(lii);
-        //     bt.addEventListener('click', () => {
-        //         lii.remove();
-        //     });
-        //     bc.focus();
-        // }
-
-        // ca.addEventListener('click', () => pika(bc.value));
-       
         const ab = document.querySelector('ul');
         const bc = document.querySelector('input');
         const ca = document.querySelector('button');
-        let ar=bc.value;
-        
-        function clicky (value){
-            let p=value;
-            bc.value='';
+
+        // Move the function expression declaration above
+        function clicky(ar) {
+            let p = ar; // Fix: Use the correct variable here
+            bc.value = ''; // Fix: Use value property to clear input
             const lii = document.createElement('li');
             const spann = document.createElement('span');
             const bt = document.createElement('button');
             lii.append(spann);
             lii.append(bt);
-            spann.textContent=p;
-            bt.textContent='Delete';
+            spann.textContent = p;
+            bt.textContent = 'Delete';
             ab.appendChild(lii);
-            ca.addEventListener('click',()=>{
+            bt.addEventListener('click', () => {
                 lii.remove();
             });
+            
             bc.focus();
-
-
         }
-        ca.addEventListener('click',()=>clicky(ar));
+
+        ca.addEventListener('click', () => pika(bc.value));
+       
+
+    </script>
+    <script>
+        const a = document.querySelectorAll('div');
+        function logText(e) {
+            console.log(this.classList.value);
+            e.stopPropagation();
+        }
+        
+        a.forEach(div => div.addEventListener('click', logText));
     </script>
 </body>
 
 </html>
+
+
+function logText(e,name) {
+    console.log(this.classList.value)+name;
+    e.stopPropagation();
+}
+
+a.forEach(div => div.addEventListener('click', logText));
